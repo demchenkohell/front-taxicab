@@ -1,0 +1,57 @@
+<form [formGroup]="formAcc" class="form">
+  <h2>Change account info</h2>
+
+  <mat-form-field appearance="fill" class="acc-field">
+    <mat-label>Name</mat-label>
+    <input matInput
+           name="username"
+           formControlName="username"
+           required>
+    <mat-error
+      *ngIf="formAcc.get('username')?.invalid"
+    >{{getErrorMessage('username')}}</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="acc-field">
+    <mat-label>Phone number</mat-label>
+    <input
+      matInput
+      name="phoneNumber"
+      formControlName="phoneNumber"
+      required>
+    <mat-error
+      *ngIf="!formAcc.get('phoneNumber')?.valid"
+    >{{getErrorMessage('phoneNumber')}}</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="acc-field">
+    <mat-label>Password</mat-label>
+    <input
+      matInput [type]="isHide ? 'password' : 'text'"
+      formControlName="password"
+      required>
+    <mat-icon matSuffix (click)="isHide = !isHide"
+    >{{isHide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    <mat-error
+      *ngIf="formAcc.get('password')?.invalid"
+    >{{getErrorMessage('password')}}</mat-error>
+  </mat-form-field>
+
+  <div class="buttons">
+    <button
+      mat-flat-button
+      color="warn"
+      name="discard"
+      (click)="onNoClick()"
+    >Discard</button>
+
+    <button
+      mat-flat-button
+      color="primary"
+      name="save"
+      (click)="saveAccountData()"
+    >Save</button>
+  </div>
+
+</form>
+

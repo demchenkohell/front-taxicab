@@ -1,0 +1,20 @@
+<div class="home-screen">
+  <nav class="buttons">
+    <button
+      mat-mini-fab color="primary"
+      (click)="openDialog()"
+    ><mat-icon>person</mat-icon>
+    </button>
+    <button
+      (click)="logout()"
+      mat-mini-fab color="accent"
+    ><mat-icon>exit_to_app</mat-icon>
+    </button>
+  </nav>
+  <app-user
+    *ngIf="role==='user'"
+  ></app-user>
+  <app-driver
+    *ngIf="role==='driver'"
+  ></app-driver>
+</div>

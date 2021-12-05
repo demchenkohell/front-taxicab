@@ -1,0 +1,16 @@
+h2{
+  font-weight: normal;
+  font-size: 36px;
+}
+.form{
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+}
+.acc-field{
+  padding: 10px;
+}
+.buttons{
+  display: flex;
+  justify-content: space-around;
+}

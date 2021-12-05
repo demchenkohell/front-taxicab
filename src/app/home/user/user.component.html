@@ -1,0 +1,41 @@
+<div class="user-screen">
+  <form [formGroup]="formOrder" class="order">
+    <h2>Make order</h2>
+    <mat-form-field appearance="fill" class="auth-field">
+      <mat-label>Location</mat-label>
+      <input
+        matInput
+        name="location"
+        formControlName="location"
+        required>
+      <mat-error
+        *ngIf="!formOrder.get('location')?.valid"
+      >{{getErrorMessage('location')}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="auth-field">
+      <mat-label>Destination</mat-label>
+      <input
+        matInput
+        name="destination"
+        formControlName="destination"
+        required>
+      <mat-error
+        *ngIf="!formOrder.get('destination')?.valid"
+      >{{getErrorMessage('destination')}}</mat-error>
+    </mat-form-field>
+
+    <div>
+      <button
+        mat-flat-button
+        color="primary"
+        name="login"
+        (click)="sendOrder()"
+      >Confirm order</button>
+    </div>
+
+  </form>
+  <div class="google-map">
+
+  </div>
+</div>

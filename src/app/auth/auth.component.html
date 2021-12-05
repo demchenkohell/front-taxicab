@@ -1,0 +1,64 @@
+<div class="auth-screen">
+  <h1>Authentication Form</h1>
+    <form [formGroup]="formAuth" class="form">
+
+      <mat-form-field appearance="fill" class="auth-field">
+        <mat-label>Phone number</mat-label>
+        <input
+          matInput
+          name="phoneNumber"
+          formControlName="phoneNumber"
+          required>
+        <mat-error
+          *ngIf="!formAuth.get('phoneNumber')?.valid"
+        >{{getErrorMessage('phoneNumber')}}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="auth-field">
+        <mat-label>Password</mat-label>
+        <input
+          matInput [type]="isHide ? 'password' : 'text'"
+          formControlName="password"
+          required>
+        <mat-icon matSuffix (click)="isHide = !isHide"
+        >{{isHide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        <mat-error
+          *ngIf="formAuth.get('password')?.invalid"
+        >{{getErrorMessage('password')}}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill"  class="auth-field">
+        <mat-label>Status</mat-label>
+        <mat-select
+          formControlName="role"
+        required>
+          <mat-option value="user">User</mat-option>
+          <mat-option value="driver">Driver</mat-option>
+        </mat-select>
+        <mat-error
+          *ngIf="formAuth.get('role')?.invalid"
+        >{{getErrorMessage('role')}}</mat-error>
+      </mat-form-field>
+
+      <div class="buttons">
+        <div class="submission">
+          <button
+            mat-flat-button
+            color="primary"
+            name="login"
+            (click)="sendLoginForm()"
+          >LogIn</button>
+        </div>
+
+        <div class="submission">
+          <button
+            mat-flat-button
+            color="accent"
+            name="register"
+            (click)="sendRegisterForm()"
+          >SignUp</button>
+        </div>
+      </div>
+
+    </form>
+</div>

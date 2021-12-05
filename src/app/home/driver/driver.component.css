@@ -1,0 +1,31 @@
+.driver-screen{
+  width: 500px;
+  display: flex;
+  justify-content: center;
+}
+h2{
+  text-align: center;
+}
+p{
+  margin: 10px;
+  width: fit-content;
+}
+.order-list{
+  width: 60%;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+.order-card{
+  display: flex;
+  height: fit-content;
+  padding: 10px;
+  border: 1px solid #eeeeee;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(17, 17, 17, 0.04);
+}
+button{
+  margin-left: auto;
+}

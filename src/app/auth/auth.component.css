@@ -1,0 +1,22 @@
+h1{
+  font-weight: normal;
+  font-size: 36px;
+}
+.auth-screen{
+  padding: 60px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.form{
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+}
+.auth-field{
+  padding: 10px;
+}
+.buttons{
+  display: flex;
+  justify-content: space-around;
+}
